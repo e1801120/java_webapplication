@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<Resource name="jdbc/ExampleDB" auth="Container"
+type="javax.sql.DataSource"
+maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+username="e1801120" password="ChF6SpnVqct"
+driverClassName="com.mysql.cj.jdbc.Driver"
+url="jdbc:mysql://mariadb.vamk.fi:3306/e1801120_project?serverTimezone=Europe/Helsinki" />
+<Realm className="org.apache.catalina.realm.DataSourceRealm"
+   dataSourceName="jdbc/ExampleDB"
+   localDataSource="true"
+   userTable="user" userNameCol="username" userCredCol="password"
+   userRoleTable="user" roleNameCol="rolename">
+   <CredentialHandler className="handler.BCryptCredentialHandler" />
+   </Realm>
+</Context>
